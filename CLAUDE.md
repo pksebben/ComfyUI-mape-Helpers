@@ -9,7 +9,7 @@ this repo:
   * for custom node backend stuff: COMFYUI_CUSTOM_NODE_REFERENCE.md
   * for frontend work: COMFYUI_FRONTEND_REFERENCE.md
 
-make sure to check these before doing work on those components.  In the event that you
+make sure to check these before doing any work in this repo.  In the event that you
 find information in either file to be in error, save a fixed copy as FILENAME.md.FIXES
 and make sure to include a note in the PR.
 
