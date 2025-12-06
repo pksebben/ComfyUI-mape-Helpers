@@ -454,7 +454,7 @@ function createToolbar() {
         <div class="actions">
             <button class="action-btn" id="mape-preview" title="Open image preview (Cmd+Shift+P)">🖼️</button>
             <button class="action-btn" id="mape-tweak" title="Add selected text node to prompt tweaker">📝 Tweak</button>
-            <button class="action-btn" id="mape-explode" title="Convert links to variables (Shift+click link)">Split</button>
+            <button class="action-btn" id="mape-explode" title="Convert links to variables (Ctrl+click link)">Split</button>
             <button class="action-btn" id="mape-heal" title="Convert variables back to links">Join</button>
             <button class="action-btn" id="mape-settings" title="Settings">⚙️</button>
         </div>
@@ -1458,10 +1458,10 @@ app.registerExtension({
             drawConnectionLines(this.ctx);
         };
 
-        // Hook into link menu for Shift+click conversion
+        // Hook into link menu for Ctrl+click conversion
         const originalShowLinkMenu = LGraphCanvas.prototype.showLinkMenu;
         LGraphCanvas.prototype.showLinkMenu = function(link, e) {
-            if (e?.shiftKey) {
+            if (e?.ctrlKey) {
                 let name = "variable";
                 if (getSetting("promptForVariableName") && !getSetting("ignorePromptForExplodeHeal")) {
                     name = prompt("Variable name:", name);
